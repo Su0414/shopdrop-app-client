@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Items from '../components/items/Items'
 
-class ItemsService extends Component {
-    render() {
-        return (
+const ItemsService = ({items}) => {
+  return (
           <div>
-              <Items items = {this.props.items}/>
+              <Items items = {items}/>
           </div>
-    )
-  }
+    )  
 }
-  const mapStateToProps = state => ({ items: state.items })
 
-  export default ItemsService;
+export default ItemsService;
