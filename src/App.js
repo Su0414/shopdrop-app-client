@@ -3,12 +3,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Button from '@material-ui/core/Button';
+
 import ItemsService from './services/ItemsService'
-
-const API_URL= process.env.REACT_APP_API_URL;
-console.log(API_URL);
-
-//const items = [{id:1, name:"Black", price:"189"},{id:2, name:"Purple", price:"189"},{id:3, name:"Pink", price:"189"}];
+import Items from './components/items/Items'
 
 
 class App extends Component {
@@ -20,13 +17,9 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.fetchItems().then(items => this.setState({items}));
-  }
-
-  fetchItems(){
-    return fetch('${API_URL}/items')
-            .then(res => res.json())
-  }
+    console.log("in componenet mount")
+    ItemsService.fetchItems().then(items => this.setState({items}));
+  }  
 
   render() {
     console.log(this.state.items)
@@ -36,7 +29,7 @@ class App extends Component {
         <Button variant="contained" color="primary">
         <h1>Shopping Cart</h1>
         </Button>
-        <ItemsService items={this.state.items}/>
+        <Items items={this.state.items}/>
         
       </div>
     );

@@ -1,12 +1,18 @@
 import React from 'react'
-import Items from '../components/items/Items'
 
-const ItemsService = ({items}) => {
-  return (
-          <div>
-              <Items items = {items}/>
-          </div>
-    )  
+
+const API_URL= process.env.REACT_APP_API_URL;
+console.log(API_URL);
+
+const ItemsService = {
+
+    fetchItems: () => {
+        console.log("in fetch mount");
+
+        return fetch(`${API_URL}/items`)
+                .then(response => response.json())
+      }
+
 }
 
 export default ItemsService;

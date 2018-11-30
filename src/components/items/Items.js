@@ -4,10 +4,10 @@ import Item from './Item'
 
 const Items = ({items}) => {
 const renderItems = items.map(item =>             
-        <span id={item.id}>
-        <ul>{item.name}</ul>
-        <ul>{item.price}</ul>
-        </span>          
+        <p id={item.id}>
+        {item.name}
+        {item.price}
+        </p>          
         )
 
         return(
