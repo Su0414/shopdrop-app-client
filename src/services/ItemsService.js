@@ -5,10 +5,11 @@ class ItemsService extends Component {
     render() {
         return (
           <div>
-              <Items/>
+              <Items items = {this.props.items}/>
           </div>
     )
   }
 }
+  const mapStateToProps = state => ({ items: state.items })
 
-export default ItemsService;
+  export default ItemsService;

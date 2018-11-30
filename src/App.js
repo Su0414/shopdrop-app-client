@@ -4,6 +4,8 @@ import './App.css';
 import Button from '@material-ui/core/Button';
 import ItemsService from './services/ItemsService'
 
+const items = [{id:1, name:"Black", price:"189"},{id:2, name:"Purple", price:"189"},{id:3, name:"Pink", price:"189"}];
+
 
 class App extends Component {
   render() {
@@ -12,7 +14,7 @@ class App extends Component {
         <Button variant="contained" color="primary">
         <h1>Shopping Cart</h1>
         </Button>
-        <ItemsService/>
+        <ItemsService items={items}/>
         
       </div>
     );

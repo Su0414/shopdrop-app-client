@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-class Item extends Component {
-    render() {
+const Item = ({item}) => {
         return (
           <div>
-              Item Name
+              <ul>{item}</ul>
           </div>
     )
   }
-}
+
 export default Item;
