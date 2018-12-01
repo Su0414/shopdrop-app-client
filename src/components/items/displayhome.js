@@ -2,16 +2,16 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 
 import Items from './items'
-import Login from './Login'
+import Login from './login'
+import Blog from './blog'
+
 
 const DisplayHome = ({items}) => (
   <Switch>
     <Route path="/items" 
     component={props => <Items {...props} extra={items} />}/>
-    
-    <Route path="/items" component={Items} />
-
-    <Route path="/Login" component={Login} />
+    <Route path="/blog" component={Blog} />
+    <Route exact path="/login" component={Login} />
   </Switch>
 )
 
