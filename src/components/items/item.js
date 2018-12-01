@@ -1,15 +1,30 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { Badge, Card, CardTitle, CardText, CardActions, Button, CardMenu, Icon } from 'react-mdl';
 
 import AddToCart from './addtocart';
-import AddToWishListCart from './addtowishlistcart';
 
 const Item = ({item}) => {
         return (
-          <div>
-              <ul>{item}</ul>
-              <Link to="/addtowishlistcart">Add to your wish list</Link> || 
-              <Link to="/addtocart">Add to your bag</Link> ||
+          <div>             
+
+          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
+            <CardTitle style={{color: '#fff', height: '176px', background: 'url({item.image_url}) center / cover'}} ><Link to="/item">{item.name}</Link> #{item.id}</CardTitle>
+            <CardText> 
+              {item.description}                 
+              {item.price}        
+            </CardText>
+            <CardActions border>
+              <Button colored>Add Cart</Button> 
+              
+            </CardActions>
+            <CardMenu style={{color: '#fff'}}>
+              <Badge text="♥" overlap>
+                  <Icon name="account_box" />
+              </Badge>
+            </CardMenu>
+          </Card>
+
           </div>
     )
   }

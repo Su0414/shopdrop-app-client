@@ -1,18 +1,12 @@
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Link } from "react-router-dom";
-
 import { Layout, Header, Navigation, Content } from 'react-mdl';
-
-
 import ItemsService from './services/ItemsService'
 import Items from './components/items/items'
 import DisplayFilter from './components/items/displayfilter'
-
 import Blog from './components/items/blog'
-
 
 class App extends Component {
   constructor(){
