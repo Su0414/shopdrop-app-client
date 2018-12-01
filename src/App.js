@@ -35,8 +35,10 @@ class App extends Component {
                     </Navigation>
                 </Header>        
                 <DisplayFilter/>
+                <Content>
+                <div className="page-content" />
                 <Items items={this.state.items}/>
-                <Content />
+                </Content>
             </Layout>
         </div>
     );

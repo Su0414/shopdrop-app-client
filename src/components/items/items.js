@@ -22,16 +22,18 @@ class Items extends Component {
           <Tab>For Him</Tab>
           <Tab>Kids</Tab>
         </Tabs>
-          <Grid>
-            <Cell col={12}>
-              <div className="content">
-                <div className="products-grid">   
-                  {items_list}
+          <div style={{width: '100%', margin: 'auto'}}>
+            <Grid>
+              <Cell col={12}>
+                <div className="content">
+                  <div className="products-grid">
+                    {items_list}
+                  </div>
                 </div>
-              </div>
-              
-            </Cell>
-          </Grid>
+                
+              </Cell>
+            </Grid>
+          </div>
       </div>
     )
   }
