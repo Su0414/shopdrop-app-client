@@ -4,7 +4,7 @@ import React from 'react'
 const API_URL= process.env.REACT_APP_API_URL;
 console.log(API_URL);
 
-const ItemsService = {
+const ItemsContainer = {
 
     fetchItems: () => {
         console.log("in fetch mount");
@@ -15,4 +15,4 @@ const ItemsService = {
 
 }
 
-export default ItemsService;
+export default ItemsContainer;

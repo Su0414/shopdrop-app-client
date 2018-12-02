@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
 import { Layout, Header, Navigation, Content } from 'react-mdl';
-import ItemsService from './services/ItemsService'
-import Items from './components/items/items'
-import DisplayFilter from './components/items/displayfilter'
-import Blog from './components/items/blog'
+import ItemsContainer from './ItemsContainer'
+import Items from '../components/items/items'
+import DisplayFilter from '../components/items/displayfilter'
+import Blog from '../components/items/blog'
 
 class App extends Component {
   constructor(){
@@ -18,7 +18,7 @@ class App extends Component {
 
   componentDidMount(){
     console.log("in componenet mount")
-    ItemsService.fetchItems().then(items => this.setState({items}));
+    ItemsContainer.fetchItems().then(items => this.setState({items}));
   }  
 
   render() {
