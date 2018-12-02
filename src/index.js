@@ -8,10 +8,16 @@ import { BrowserRouter } from 'react-router-dom';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 
+import { Provider } from 'react-redux';
+import store from './store.js';
+
+
 ReactDOM.render(
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+        <App />
+        </BrowserRouter>
+    </Provider>  
     ,document.getElementById('root')
 )
     
