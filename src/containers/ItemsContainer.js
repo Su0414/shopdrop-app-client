@@ -4,32 +4,19 @@ import { connect } from 'react-redux';
 import { getAllItems } from '../actions/items';
 import Item from '../components/items/item'
 
-
-// const API_URL= process.env.REACT_APP_API_URL;
-// console.log(API_URL);
-
 class ItemsContainer extends Component {
+    state 
 
     componentDidMount() {
         this.props.getAllItems()
     }
 
-    // fetchItems: () => {
-    //     console.log("in fetch mount");
-
-    //     return fetch(`${API_URL}/items`)
-    //             .then(response => response.json())
-    //   }
-
     render() {
-        console.log(this.props)
-        // const items_list = this.props.items.map(item => {
-        //     return (<Item item={item}/>)
-        // });
+        console.log(this.props.items)
+
         return (
           <div className="ItemsContainer">
             <h1>All Items</h1>
-            {/* {items_list} */}
           </div>
         );
     }  
@@ -41,10 +28,5 @@ const mapStateToProps = (state) => {
       items: state.items
     })
   }
-
-// const mapDispatchToProps = dispatch => ({
-//     getAllItems: items => dispatch({type: 'GET_ITEMS_SUCCESS'})
-   
-// })  
 
 export default connect(mapStateToProps, {getAllItems})(ItemsContainer);

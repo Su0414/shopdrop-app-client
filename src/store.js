@@ -8,7 +8,7 @@ import {
   import itemReducer from './reducers/itemReducer';
 
   const reducers = combineReducers({
-    itemReducer
+    items: itemReducer
   });
   const middleware = [thunk];
   

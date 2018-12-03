@@ -1,13 +1,11 @@
-export default function itemReducer(state = {
-          loading: false,
-          items: [], 
-          }
-          , action){
+export default function itemReducer(state={
+  items: []
+}, action){
     switch(action.type) { 
       case 'GET_ITEMS_SUCCESS':
-            console.log('get item success', action.payload)
-            //return {...state, loading: false, items: action.payload}
-            return action.payload;    
+            //console.log('get item success', action.payload)
+            const items = action.payload;
+            return { ...state, items}  
 
       default: return state;
     }
