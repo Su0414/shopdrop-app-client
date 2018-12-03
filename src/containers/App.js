@@ -4,22 +4,22 @@ import './App.css';
 import { Link } from "react-router-dom";
 import { Layout, Header, Navigation, Content } from 'react-mdl';
 import ItemsContainer from './ItemsContainer'
-import Items from '../components/items/items'
+// import Items from '../components/items/items'
 import DisplayFilter from '../components/items/displayfilter'
 import Blog from '../components/items/blog'
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      items: []
-    }
-  }
+  // constructor(){
+  //   super()
+  //   this.state = {
+  //     items: []
+  //   }
+  // }
 
-  componentDidMount(){
-    console.log("in componenet mount")
-    ItemsContainer.fetchItems().then(items => this.setState({items}));
-  }  
+  // componentDidMount(){
+  //   console.log("in componenet mount")
+  //   ItemsContainer.fetchItems().then(items => this.setState({items}));
+  // }  
 
   render() {
     // console.log(this.state.items)
@@ -37,7 +37,8 @@ class App extends Component {
                 <DisplayFilter/>
                 <Content>
                 <div className="page-content" />
-                <Items items={this.state.items}/>
+                {/* <Items items={this.state.items}/> */}
+                <ItemsContainer/>
                 </Content>
             </Layout>
         </div>

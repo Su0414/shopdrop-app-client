@@ -5,10 +5,10 @@ import {
   } from 'redux';
   import thunk from 'redux-thunk';
 
-  import manageItem from './reducers/manageItem';
+  import itemReducer from './reducers/itemReducer';
 
   const reducers = combineReducers({
-    manageItem
+    itemReducer
   });
   const middleware = [thunk];
   
