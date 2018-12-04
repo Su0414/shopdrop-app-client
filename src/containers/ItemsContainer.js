@@ -2,11 +2,11 @@ import React,{Component} from 'react'
 import { connect } from 'react-redux';
 
 import { getAllItems } from '../actions/items';
-import Item from '../components/items/item'
+import Items from '../components/items/items';
+import ItemFormContainer from './ItemFormContainer';
 
 class ItemsContainer extends Component {
-    state 
-
+    
     componentDidMount() {
         this.props.getAllItems()
     }
@@ -17,6 +17,8 @@ class ItemsContainer extends Component {
         return (
           <div className="ItemsContainer">
             <h1>All Items</h1>
+            <ItemFormContainer />
+            <Items items = {this.props}/>
           </div>
         );
     }  

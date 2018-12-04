@@ -10,9 +10,10 @@ class Items extends Component {
   }
 
   render() {
-    const items_list = this.props.items.map(item => {
-      return (<Item item={item}/>)
-    });
+    console.log(this.props)
+    // const items_list = this.props.items.map(item => {
+    //   return (<Item item={item}/>)
+    // });
 
     return(
       <div>
@@ -27,7 +28,7 @@ class Items extends Component {
               <Cell col={12}>
                 <div className="content">
                   <div className="products-grid">
-                    {items_list}
+                    {/* {items_list} */}
                   </div>
                 </div>
                 
