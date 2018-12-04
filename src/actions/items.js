@@ -19,7 +19,8 @@ export const getAllItems = () => {
   }
 
   export const createItem = item => {
-    //console.log("in createItem");
+    console.log("in createItem",item);
+    //debugger;
     return dispatch => {
       return fetch(`${API_URL}/items`, {
         method: "POST",
@@ -29,7 +30,7 @@ export const getAllItems = () => {
         body: JSON.stringify({ item: item })
       })
         .then(response => response.json())
-        .then(item => {
+        .then(item => {          
           dispatch(
             {
               type: 'CREATE_ITEM_SUCCESS', payload: item

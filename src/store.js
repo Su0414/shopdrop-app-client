@@ -3,14 +3,16 @@ import {
     applyMiddleware,
     combineReducers
   } from 'redux';
-  import thunk from 'redux-thunk';
+  import ReduxThunk from 'redux-thunk';
 
-  import itemReducer from './reducers/itemReducer';
+  import ItemReducer from './reducers/itemReducer';
+  import ItemFormReducer from './reducers/itemFormReducer';
 
   const reducers = combineReducers({
-    items: itemReducer
+    items: ItemReducer,
+    itemFormData: ItemFormReducer
   });
-  const middleware = [thunk];
+  const middleware = [ReduxThunk];
   
   export default createStore(
     reducers,

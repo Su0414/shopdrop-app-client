@@ -12,12 +12,12 @@ class ItemsContainer extends Component {
     }
 
     render() {
-        console.log(this.props.items)
+        //console.log(this.props.items)
 
         return (
           <div className="ItemsContainer">
-            <h1>All Items</h1>
-            <ItemFormContainer />
+            <h1>Add new product</h1>
+            <ItemFormContainer/>
             <Items items = {this.props}/>
           </div>
         );

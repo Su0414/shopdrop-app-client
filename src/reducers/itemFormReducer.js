@@ -1,0 +1,25 @@
+const initialState = {
+    name: '', 
+    price: 0, 
+    image_url: '', 
+    description: ''
+  }
+  
+  export default function ItemFormReducer(state=
+    {initialState, 
+      itemFormData:[]
+    }, action) {
+  
+    switch(action.type) {
+        case 'UPDATED_ITEMFORM_DATA':
+        //debugger;
+        //console.log('after form submit update itemFormdata',action.payload)
+        const itemFormData = action.payload;
+        console.log('after form submit update itemFormdata',itemFormData)      
+        return {...state, itemFormData:[...state.itemFormData, action.payload]}
+            
+
+        default: 
+            return state;
+    }
+  }

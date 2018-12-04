@@ -1,5 +1,5 @@
-export default function itemReducer(state={
-  items: [], initialState
+export default function ItemReducer(state={
+  items: []
 }, action){
     switch(action.type) { 
       case 'GET_ITEMS_SUCCESS':
@@ -8,16 +8,10 @@ export default function itemReducer(state={
             return { ...state, items}
             
       case 'CREATE_ITEM_SUCCESS':
-            //console.log('create item success', action.payload)
+            console.log('create item success', action.payload)
             return {...state, items:[...state.items, action.payload]}
-
       default: return state;
     }
   }
 
-  const initialState = {
-    name: '', 
-    price: 0, 
-    image_url: '', 
-    description: ''
-  }
+  
