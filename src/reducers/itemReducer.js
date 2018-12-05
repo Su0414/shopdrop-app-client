@@ -3,12 +3,11 @@ export default function ItemReducer(state={
 }, action){
     switch(action.type) { 
       case 'GET_ITEMS_SUCCESS':
-            //console.log('get item success', action.payload)
-            const items = action.payload;
-            return { ...state, items}
+            //console.log('get item success', action.payload)            
+            return action.items;
             
       case 'CREATE_ITEM_SUCCESS':
-            console.log('create item success', action.payload)
+            //console.log('create item success', action.payload)
             return {...state, items:[...state.items, action.payload]}
       default: return state;
     }

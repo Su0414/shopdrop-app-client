@@ -6,23 +6,19 @@ import Items from '../components/items/items';
 import ItemFormContainer from './ItemFormContainer';
 
 class ItemsContainer extends Component {
-    
+  
     componentDidMount() {
-        this.props.getAllItems()
+        this.props.getAllItems();
     }
-
     render() {
-        //console.log(this.props.items)
-
+      // console.log("in container",this.props.items)
         return (
           <div className="ItemsContainer">
-            <h1>Add new product</h1>
             <ItemFormContainer/>
-            <Items items = {this.props}/>
+            <Items items={this.props.items}/>
           </div>
         );
-    }  
-
+    }
 }
 
 const mapStateToProps = (state) => {

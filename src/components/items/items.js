@@ -10,11 +10,14 @@ class Items extends Component {
   }
 
   render() {
-    console.log(this.props)
-    // const items_list = this.props.items.map(item => {
-    //   return (<Item item={item}/>)
-    // });
-
+    //console.log("in Items", this.props.items)
+    const {items} = this.props;
+   
+    const items_list = Object.values(items).map(item => {    
+      return (<Item key={item.id} item={item}/>)
+    });
+     
+    // console.log(items_list);
     return(
       <div>
         <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
@@ -28,7 +31,7 @@ class Items extends Component {
               <Cell col={12}>
                 <div className="content">
                   <div className="products-grid">
-                    {/* {items_list} */}
+                    {items_list}
                   </div>
                 </div>
                 

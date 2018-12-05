@@ -11,7 +11,7 @@ export const getAllItems = () => {
         )
         .then(items => dispatch(
           {
-            type: 'GET_ITEMS_SUCCESS', payload: items
+            type: 'GET_ITEMS_SUCCESS', items: items
           }
         ))
         .catch(error => console.log(error));

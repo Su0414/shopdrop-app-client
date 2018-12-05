@@ -3,9 +3,9 @@ import { Button} from 'react-mdl';
 
 const DisplayFilter = () => {
         return (
-          <div>                    
+          <div>                       
               <Button>Sort By Price</Button>
-          </div>
+          </div>         
     )
   }
 

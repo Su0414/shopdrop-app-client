@@ -7,15 +7,16 @@ import AddToCart from './addtocart';
 const Item = ({item}) => {
         return (
 
-          <div>             
+          <div key={item.id} >             
 
-          <Card shadow={5} style={{minWidth: '100%', margin: 'auto'}}>
+          <Card   shadow={5} style={{minWidth: '100%', margin: 'auto'}}>
             <CardTitle style={{color: '#fff', height: '176px', background: 'url({item.image_url}) center / cover'}} >
-              <Link to="/item">{item.name}</Link> #{item.id}
+              <Link to="/item">{item.name}</Link> # {item.id}
             </CardTitle>
-            <CardText> 
-              {item.description}                 
-              {item.price}        
+            <CardText>              
+              Item Details: {item.description}  <br/>               
+              Price: {item.price} <br/>
+              Item No: {item.id}       
             </CardText>
             <CardActions border>
               <Button colored>Add Cart</Button>              
