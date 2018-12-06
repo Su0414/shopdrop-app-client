@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { Layout, Header, Navigation, Content } from 'react-mdl';
 
 import ItemsContainer from './ItemsContainer'
-import DisplayFilter from '../components/items/displayfilter'
 
 class App extends Component {
   
@@ -14,13 +13,13 @@ class App extends Component {
     return (
       <div style={{height: '800px', position: 'relative'}}>
             <Layout fixedHeader>
-                <Header title={<span><span style={{ color: '#ddd' }}>SHOPDROP an </span><strong>Indian Dresses Shop</strong></span>}>
+                <Header title={<span><span style={{ color: '#ddd' }}>SHOPDROP an </span><strong>Indian Dress Shop</strong></span>}>
                     <Navigation>
-                      <Link to="/displayhome">Show Products</Link>  
-                      <Link to="/login">Login</Link>               
+                      <Link to="/login">Login</Link>
+                      <Link to="/displayhome">Products</Link>
+                      <Link to="/addtocart">Cart</Link>                                     
                     </Navigation>
                 </Header>        
-                <DisplayFilter/>
                 <Content>
                 <div className="page-content" />
                 <ItemsContainer/>

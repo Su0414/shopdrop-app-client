@@ -3,14 +3,14 @@ import { Switch, Route } from 'react-router-dom';
 
 import Items from './items'
 import Login from './login'
-import Blog from './blog'
+import AddToCart from './addtocart';
 
 
 const DisplayHome = ({items}) => (
   <Switch>
     <Route path="/items" 
     component={props => <Items {...props} extra={items} />}/>
-    <Route path="/blog" component={Blog} />
+    <Route exact path="/addtocart" component={AddToCart} />
     <Route exact path="/login" component={Login} />
   </Switch>
 )

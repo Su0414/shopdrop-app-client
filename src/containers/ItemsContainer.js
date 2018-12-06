@@ -13,9 +13,8 @@ class ItemsContainer extends Component {
         this.props.getAllItems();
     }
     render() {
-      // console.log("in container",this.props.items)
         return (
-          <div className="ItemsContainer">
+          <div className="ItemsContainer">         
             <ItemFormContainer/>
             <Items 
                   items={this.props.items}

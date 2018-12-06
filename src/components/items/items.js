@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs, Tab, Grid, Cell} from 'react-mdl';
+import { Button, Tabs, Tab, Grid, Cell} from 'react-mdl';
 
 import Item from './item'
 
@@ -10,7 +10,6 @@ class Items extends Component {
   }
 
   render() {
-    //console.log("in Items", this.props.items)
     const {items, item, deleteItem} = this.props;
    
     const items_list = Object.values(items).map(item => {    
@@ -19,7 +18,6 @@ class Items extends Component {
                     deleteItem={deleteItem}/>)
     });
      
-    // console.log(items_list);
     return(
       <div>
         <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
@@ -32,6 +30,7 @@ class Items extends Component {
             <Grid>
               <Cell col={12}>
                 <div className="content">
+                <Button>Sort By Price</Button>
                   <div className="products-grid">
                     {items_list}
                   </div>
