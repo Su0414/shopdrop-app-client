@@ -3,7 +3,6 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 // Async Actions
 export const getAllItems = () => {
-    //console.log("in getAllitems");
     return dispatch => {
       return fetch(`${API_URL}/items`)
         .then(
@@ -18,9 +17,7 @@ export const getAllItems = () => {
     }
   }
 
-  export const createItem = item => {
-    console.log("in createItem",item);
-    //debugger;
+  export const createItem = item => { 
     return dispatch => {
       return fetch(`${API_URL}/items`, {
         method: "POST",
@@ -42,8 +39,7 @@ export const getAllItems = () => {
   }
 
   export const deleteItem = item => {
-    //console.log("in deleteItem",item);
-    //debugger;
+ 
     return dispatch => {
       return fetch(`${API_URL}/items/${item}`, {
         method: "DELETE",

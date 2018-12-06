@@ -12,6 +12,7 @@ class Items extends Component {
   render() {
     const {items, item, deleteItem} = this.props;
    
+    
     const items_list = Object.values(items).map(item => {    
       return (<Item key={item.id} 
                     item={item}
@@ -32,7 +33,9 @@ class Items extends Component {
                 <div className="content">
                 <Button>Sort By Price</Button>
                   <div className="products-grid">
+
                     {items_list}
+                    
                   </div>
                 </div>
                 

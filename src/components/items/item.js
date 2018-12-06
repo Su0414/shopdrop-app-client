@@ -5,7 +5,7 @@ import { Badge, Card, CardTitle, CardText, CardActions, Button, CardMenu, Icon }
 import AddToCart from './addtocart';
 
 class Item extends Component {
-  handleOnClick(){
+  handleOnClick(event){    
     this.props.deleteItem(this.props.item.id);
   }
 render(){
@@ -25,7 +25,7 @@ render(){
               </CardText>
               <CardActions border>
                 <Button colored>Add Cart</Button>
-                <Button colored onClick={() => this.handleOnClick()}>Delete Item</Button>              
+                <Button colored onClick={(event) => this.handleOnClick(event)}>Delete Item</Button>              
               </CardActions>
               <CardMenu style={{color: '#fff'}}>
                 <Badge text="♥" overlap>

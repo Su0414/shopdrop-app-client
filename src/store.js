@@ -6,11 +6,11 @@ import {
   import ReduxThunk from 'redux-thunk';
 
   import ItemReducer from './reducers/itemReducer';
-  import ItemFormReducer from './reducers/itemFormReducer';
+  //import ItemFormReducer from './reducers/itemFormReducer';
 
   const reducers = combineReducers({
     items: ItemReducer,
-    itemFormData: ItemFormReducer
+    //itemFormData: ItemFormReducer
   });
   const middleware = [ReduxThunk];
   
