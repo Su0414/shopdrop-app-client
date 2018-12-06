@@ -11,10 +11,12 @@ class Items extends Component {
 
   render() {
     //console.log("in Items", this.props.items)
-    const {items} = this.props;
+    const {items, item, deleteItem} = this.props;
    
     const items_list = Object.values(items).map(item => {    
-      return (<Item key={item.id} item={item}/>)
+      return (<Item key={item.id} 
+                    item={item}
+                    deleteItem={deleteItem}/>)
     });
      
     // console.log(items_list);

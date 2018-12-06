@@ -8,7 +8,15 @@ export default function ItemReducer(state={
             
       case 'CREATE_ITEM_SUCCESS':
             //console.log('create item success', action.payload)
-            return {...state, items:[...state.items, action.payload]}
+            return {...state, items:[...state.items.concat(action.payload)]}
+
+      case 'DELETE_ITEM_SUCCESS':
+
+            console.log('delete item success', state)
+            //return {...state, items:[...state.items.slice(action.payload)]}
+            return Object.assign({}, ...state, 
+                                    {...state.items.filter(item => item.id !== action.id)})
+          
       default: return state;
     }
   }

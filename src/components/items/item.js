@@ -1,11 +1,20 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Link } from "react-router-dom";
 import { Badge, Card, CardTitle, CardText, CardActions, Button, CardMenu, Icon } from 'react-mdl';
 
 import AddToCart from './addtocart';
 
-const Item = ({item}) => {
+class Item extends Component {
+  handleOnClick(){
+    //console.log("in delete click",this.props);
+    this.props.deleteItem(this.props.item.id);
+  }
+render(){
+
+        const {item} = this.props
+  
         return (
+          
 
           <div key={item.id} >             
 
@@ -19,7 +28,8 @@ const Item = ({item}) => {
               Item No: {item.id}       
             </CardText>
             <CardActions border>
-              <Button colored>Add Cart</Button>              
+              <Button colored>Add Cart</Button>
+              <Button colored onClick={() => this.handleOnClick()}>Delete Item</Button>              
             </CardActions>
             <CardMenu style={{color: '#fff'}}>
               <Badge text="♥" overlap>
@@ -31,5 +41,6 @@ const Item = ({item}) => {
           </div>
     )
   }
+}
 
 export default Item;

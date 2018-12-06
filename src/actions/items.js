@@ -40,3 +40,26 @@ export const getAllItems = () => {
         .catch(error => console.log(error))
     }
   }
+
+  export const deleteItem = item => {
+    //console.log("in deleteItem",item);
+    //debugger;
+    return dispatch => {
+      return fetch(`${API_URL}/items/${item}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ item: item })
+      })
+        .then(response => response.json())
+        .then(item => {          
+          dispatch(
+            {
+              type: 'DELETE_ITEM_SUCCESS', payload: item
+            }
+          )
+        })
+        .catch(error => console.log(error))
+    }
+  }

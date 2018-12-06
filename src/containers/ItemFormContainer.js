@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import { connect } from 'react-redux';
 
 
-import { updateItemFormData } from '../actions/itemForm';
+//import { updateItemFormData } from '../actions/itemForm';
 import { createItem } from '../actions/items';
 //import ItemInput from '../components/items/itemInput'
 
@@ -72,7 +72,7 @@ class ItemFormContainer extends Component {
           value={this.state.price}
            />                      
 </div>
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Item</button>
       </form>
     </div>
     )
@@ -84,4 +84,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateItemFormData, createItem})(ItemFormContainer)
+export default connect(mapStateToProps, {createItem})(ItemFormContainer)
