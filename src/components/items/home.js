@@ -10,8 +10,8 @@ const DisplayHome = ({items}) => (
   <Switch>
     <Route path="/items" 
     component={props => <Items {...props} extra={items} />}/>
-    <Route exact path="/addtocart" component={AddToCart} />
-    <Route exact path="/login" component={Login} />
+    <Route path="/addtocart" component={AddToCart} />
+    <Route path="/login" component={Login} />
   </Switch>
 )
 
