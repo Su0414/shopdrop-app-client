@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { createItem } from '../actions/items';
 
+import { Grid, Cell} from 'react-mdl';
+
 class ItemFormContainer extends Component {
   constructor(props) {
    
@@ -30,7 +32,10 @@ class ItemFormContainer extends Component {
  
     return (
       <div>
-      <h5>Add New Product</h5>
+        <Grid className="demo-grid-1">
+            <Cell col={4}></Cell>
+            <Cell col={4}>
+            <h5>Add New Product</h5>
       <form onSubmit={event => {this.handleOnSubmit(event)}} >
           <div>
                 <label htmlFor="name">Name:</label>
@@ -69,7 +74,13 @@ class ItemFormContainer extends Component {
                     />                      
           </div>
         <button type="submit">Add Item</button>
-      </form>
+      </form>            
+            
+            </Cell>
+            <Cell col={4}></Cell>
+        </Grid>
+
+      
     </div>
     )
   }

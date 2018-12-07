@@ -25,31 +25,35 @@ class Items extends Component {
      
     return(
       <div>
-        <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
-          <Tab>All</Tab>
-          <Tab>For Her</Tab>
-          <Tab>For Him</Tab>
-          <Tab>Kids</Tab>
-        </Tabs>
-          <div style={{width: '100%', margin: 'auto'}}>
-            <Grid>
-              <Cell col={12}>
-                <div className="content">
-              
-                <Button onClick={(event) => this.handleSort(event)}>               
-                  SortBy Price
-                </Button>
+        <Grid >
+        <Cell col={1}></Cell>
+            <Cell col={10}>
+            <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
+              <Tab>All</Tab>
+              <Tab>For Her</Tab>
+              <Tab>For Him</Tab>
+              <Tab>Kids</Tab>
+            </Tabs>
 
-                  <div className="products-grid">
+              <div className="content">                      
+                            
 
-                    {items_list}
-                    
-                  </div>
+              <div style={{width: '100%', margin: 'auto'}}>
+              <Button onClick={(event) => this.handleSort(event)}>               
+                SortBy Price
+              </Button>
+
+                <div className="products-grid">
+
+                  {items_list}
+                  
                 </div>
-                
-              </Cell>
-            </Grid>
+              </div>
           </div>
+            </Cell>
+            <Cell col={1}></Cell>
+        </Grid>      
+          
       </div>
     )
   }

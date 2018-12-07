@@ -1,14 +1,15 @@
 import React from 'react'
-import { DataTable, TableHeader, Button} from 'react-mdl';
+import { Grid, Cell, DataTable, TableHeader, Button} from 'react-mdl';
 
 const AddToCart = () => {
         return (
           <div>
-              <h5>Shopping Bag</h5>
-
-              <Button raised colored align="left">Proceed to Checkout</Button>
-
-              <DataTable style={{minWidth: '80%', margin: 'auto'}}
+            <Grid className="demo-grid-1">
+                <Cell col={2}>
+                <h3>Shopping Bag</h3>
+                </Cell>
+                <Cell col={8}>
+                <DataTable style={{minWidth: '100%', margin: 'auto'}}
                 shadow={0}
                 rows={[
                     {
@@ -30,7 +31,7 @@ const AddToCart = () => {
                 <TableHeader numeric name="removeItem" tooltip="Remove from bag">Remove</TableHeader>
             </DataTable>
 <br/>
-            <DataTable style={{minWidth: '80%', margin: 'auto'}}
+            <DataTable style={{minWidth: '100%', margin: 'auto'}}
                 shadow={0}
                 rows={[
                     {
@@ -43,7 +44,18 @@ const AddToCart = () => {
               >
               <TableHeader name="total" tooltip="Check your total">TOTAL</TableHeader>
  
-            </DataTable>
+            </DataTable>                
+                
+                </Cell>
+                <Cell col={2}>
+                <Button raised colored align="left">Proceed to Checkout</Button>
+
+                </Cell>
+            </Grid>
+              
+
+
+              
           </div>
     )
   }
