@@ -14,7 +14,7 @@ class Items extends Component {
   }
 
   render() {
-    const {items, item, deleteItem} = this.props;
+    const {items, deleteItem} = this.props;
    
     
     const items_list = Object.values(items).map(item => {    

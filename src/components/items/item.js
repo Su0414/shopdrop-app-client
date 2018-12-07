@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from "react-router-dom";
 import { Badge, Card, CardTitle, CardText, CardActions, Button, CardMenu, Icon } from 'react-mdl';
-import AddToCart from './addtocart';
 
 import ItemCounterContainer from '../../containers/ItemCounterContainer';
 

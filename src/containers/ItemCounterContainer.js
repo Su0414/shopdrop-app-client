@@ -27,7 +27,6 @@ class ItemCounterContainer extends Component {
 
 
     render() {   
-        const cnt = this.props.likesCount 
         const cnt_arr = Object.values(this.props.likesCount)  
         
         return (

@@ -3,7 +3,9 @@ import { Button, Textfield , Grid, Cell} from 'react-mdl';
 
 const Login = (props) => {
 
-      const handleOnSubmit = () => {}
+      const handleOnSubmit = () => {
+        console.log("attach user here");
+      }
       const {email, password} = props
 
         return (
