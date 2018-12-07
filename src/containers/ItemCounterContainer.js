@@ -8,21 +8,21 @@ import { decrementLikes } from '../actions/itemCounter';
 class ItemCounterContainer extends Component {
 
   incrementLikes = (event) => {
- 
+    //console.log("+=", this.props.itemId)
     const { name, value } = event.target;
     const currentLikesData = Object.assign({}, this.props.likesCount, {
       [name]: value
     })
-    this.props.incrementLikes(currentLikesData);
+    this.props.incrementLikes({likesCount: currentLikesData, itemId: this.props.itemId});
   }
 
   decrementLikes = (event) => {
-  
+    //console.log("-=", this.props.itemId)
     const { name, value } = event.target;
     const currentLikesData = Object.assign({}, this.props.likesCount, {
       [name]: value
     })
-    this.props.decrementLikes(currentLikesData);
+    this.props.decrementLikes({likesCount: currentLikesData, itemId: this.props.itemId});
   }
 
 
@@ -31,9 +31,7 @@ class ItemCounterContainer extends Component {
         const cnt_arr = Object.values(this.props.likesCount)  
         
         return (
-          <div>    
-             
-              
+          <div>              
               <Button colored onClick={(event) => this.incrementLikes(event)}>Like</Button>
               <Button colored onClick={(event) => this.decrementLikes(event)}>DisLike</Button> 
           

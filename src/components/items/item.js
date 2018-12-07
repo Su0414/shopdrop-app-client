@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Badge, Card, CardTitle, CardText, CardActions, Button, CardMenu, Icon } from 'react-mdl';
 import AddToCart from './addtocart';
 
+import ItemCounterContainer from '../../containers/ItemCounterContainer';
+
+
 class Item extends Component {
   
   handleOnClick(event){    
@@ -23,7 +26,7 @@ render(){
                 Item Details: {item.description}  <br/>               
                 Price: {item.price} <br/>
                 # {item.id}              
-             
+                <ItemCounterContainer itemId={item.id}/>
               </CardText>
               <CardActions border>
                 <Button colored>Add Cart</Button>
