@@ -5,6 +5,7 @@ import AddToCart from './addtocart';
 
 import ItemCounterContainer from '../../containers/ItemCounterContainer';
 
+import ShoppingBagContainer from '../../containers/ShoppingBagContainer';
 
 class Item extends Component {
   
@@ -29,7 +30,9 @@ render(){
                 <ItemCounterContainer itemId={item.id}/>
               </CardText>
               <CardActions border>
-                <Button colored>Add Cart</Button>
+
+                <ShoppingBagContainer item={item}/>
+
                 <Button colored onClick={(event) => this.handleOnClick(event)}>Delete Item</Button>              
               </CardActions>
               <CardMenu style={{color: '#fff'}}>
