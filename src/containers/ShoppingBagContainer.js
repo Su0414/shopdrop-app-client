@@ -1,34 +1,39 @@
 import React,{Component} from 'react'
 import { Button } from 'react-mdl';
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
+
+import { addItemsToBag } from '../actions/shoppingBag';
+import { deleteItemsFromBag } from '../actions/shoppingBag';
+
+import AddToCart from '../components/items/addtocart'
 
 class ShoppingBagContainer extends Component {
-  state = { 
-      cartCount: 0, 
-      bagItems: []
 
-}
-  addToBagItems = (event) => {
-     this.setState({
-        cartCount: this.state.cartCount + 1,
-        bagItems: [...this.state.bagItems, this.props.item ]
-    });
+  addItemsToBag = (event) => {    
+    this.props.addItemsToBag(this.props.item)
   }
 
-  deleteFromBagItems = (event) => {
-     this.setState({
-        cartCount: this.state.cartCount - 1
-     });
+  deleteItemsFromBag = (event) => {   
+     this.props.deleteItemsFromBag(this.props.item)
   }
-
 
     render() {   
+
+     //console.log("in cont=",this.props.bagItems)
+     const {bagItems} = this.props.bagItems;
+     
+      
         return (
           <div>              
-              <Button colored onClick={(event) => this.addToBagItems(event)}>Add To Cart</Button>
-              <Button colored onClick={(event) => this.deleteFromBagItems(event)}>Remove From Cart</Button>
+              <Button colored onClick={(event) => this.addItemsToBag(event)}>Add To Cart</Button>
+              <Button colored onClick={(event) => this.deleteItemsFromBag(event)}>Remove From Cart</Button>
 
-              <span>Bag Count=
-              {this.state.cartCount}
+              <span>
+              <Link to={{pathname: "/addtocart" 
+                      }}
+              >Show Cart</Link>
+              
               
               </span>   
           </div>
@@ -36,5 +41,10 @@ class ShoppingBagContainer extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    bagItems: state.bagItems
+  }
+}
 
-export default ShoppingBagContainer
+export default connect(mapStateToProps, {addItemsToBag, deleteItemsFromBag})(ShoppingBagContainer)

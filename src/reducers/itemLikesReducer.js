@@ -1,30 +1,20 @@
+// import cuid from 'cuid';
+// export const cuidFn = cuid;
 
   export default function ItemLikesReducer(state = {
-    likesCount: 0,
-    likes: [], 
-    dislikes: []
+    likesCount: 0
   }
   , action) {
     switch(action.type) {
       case 'INCREMENT_LIKES':
+      return {
+        likesCount: state.likesCount + 1
+    };
 
-      // const like = { likesCount: action.likesCount + 1, itemId: action.item.itemId };
-      // console.log("+=", like);
-      // debugger;
-      //     return { ...state,
-      //       likes: [...state.likes, like]
-      //     }
-
-
-      console.log(state)
-        return {
-            likesCount: state.likesCount + 1
-        };
       case 'DECREMENT_LIKES':
-      console.log(state)
-        return {
-            likesCount: state.likesCount - 1
-        };
+      return {
+        likesCount: state.likesCount - 1
+    };
       default:
         return state;
     }

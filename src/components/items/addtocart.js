@@ -1,10 +1,22 @@
 import React from 'react'
-import { Grid, Cell, DataTable, TableHeader, Button} from 'react-mdl';
+import { ListItem, Grid, Cell, DataTable, TableHeader, Button} from 'react-mdl';
 
-const AddToCart = () => {
-        return (
+const AddToCart = (props) => {
+  //console.log("in cart=", props.bagItems)
+  const itemRow = props.bagItems;
+
+  const listItems = itemRow.map((item) =>
+    <ListItem key={item.toString()}
+              value={item.name} />
+  );
+
+  //debugger;
+         return (
           <div>
-            <Grid className="demo-grid-1">
+            <ul>
+              {listItems}
+            </ul>
+            {/* <Grid className="demo-grid-1">
                 <Cell col={2}>
                 <h3>Shopping Bag</h3>
                 </Cell>
@@ -52,7 +64,7 @@ const AddToCart = () => {
 
                 </Cell>
             </Grid>
-              
+               */}
 
 
               
