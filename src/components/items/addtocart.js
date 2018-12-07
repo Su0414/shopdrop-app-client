@@ -2,21 +2,21 @@ import React from 'react'
 import { ListItem, Grid, Cell, DataTable, TableHeader, Button} from 'react-mdl';
 
 const AddToCart = (props) => {
-  //console.log("in cart=", props.bagItems)
-  const itemRow = props.bagItems;
+  //console.log("in cart=", props)
+  // const itemRow = props.bagItems;
 
-  const listItems = itemRow.map((item) =>
-    <ListItem key={item.toString()}
-              value={item.name} />
-  );
+  // const listItems = itemRow.map((item) =>
+  //   <ListItem key={item.toString()}
+  //             value={item.name} />
+  // );
 
   //debugger;
          return (
           <div>
             <ul>
-              {listItems}
+              {/* {listItems} */}
             </ul>
-            {/* <Grid className="demo-grid-1">
+            <Grid className="demo-grid-1">
                 <Cell col={2}>
                 <h3>Shopping Bag</h3>
                 </Cell>
@@ -64,7 +64,7 @@ const AddToCart = (props) => {
 
                 </Cell>
             </Grid>
-               */}
+              
 
 
               

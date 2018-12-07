@@ -26,7 +26,7 @@ render(){
                 Item Details: {item.description}  <br/>               
                 Price: {item.price} <br/>
                 # {item.id}              
-                <ItemCounterContainer itemId={item.id}/>
+                {/* <ItemCounterContainer itemId={item.id}/> */}
               </CardText>
               <CardActions border>
 

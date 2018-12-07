@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import { Button } from 'react-mdl';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 import { addItemsToBag } from '../actions/shoppingBag';
 import { deleteItemsFromBag } from '../actions/shoppingBag';
