@@ -7,10 +7,12 @@ import {
 
   import ItemReducer from './reducers/itemReducer';
   //import ItemFormReducer from './reducers/itemFormReducer';
+  import ItemLikesReducer from './reducers/itemLikesReducer';
 
   const reducers = combineReducers({
     items: ItemReducer,
     //itemFormData: ItemFormReducer
+    likesCount: ItemLikesReducer
   });
   const middleware = [ReduxThunk];
   

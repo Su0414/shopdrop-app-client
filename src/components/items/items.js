@@ -9,6 +9,10 @@ class Items extends Component {
     this.state = { activeTab: 0 };
   }
 
+  handleSort(event){
+    console.log("in handle sort" , this.props.items);
+  }
+
   render() {
     const {items, item, deleteItem} = this.props;
    
@@ -31,7 +35,11 @@ class Items extends Component {
             <Grid>
               <Cell col={12}>
                 <div className="content">
-                <Button>Sort By Price</Button>
+              
+                <Button onClick={(event) => this.handleSort(event)}>               
+                  SortBy Price
+                </Button>
+
                   <div className="products-grid">
 
                     {items_list}

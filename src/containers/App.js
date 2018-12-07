@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { Link } from "react-router-dom";
-import { Layout, Header, Navigation, Content, Drawer, Button } from 'react-mdl';
+import { Layout, Header, Navigation, Content } from 'react-mdl';
 
 
 import ItemsContainer from './ItemsContainer'
