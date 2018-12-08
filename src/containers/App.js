@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { Link } from "react-router-dom";
-import { Layout, Header, Navigation, Content } from 'react-mdl';
+import { Layout, Header, Navigation, Content, Footer, FooterSection, FooterLinkList } from 'react-mdl';
 
 
 import ItemsContainer from './ItemsContainer'
@@ -19,7 +19,13 @@ class App extends Component {
     return (
       <div style={{height: '800px', position: 'relative'}}>
             <Layout fixedHeader>
-            
+                <Footer size="micro">
+                    <FooterSection type="center" logo="Shopdrop">
+                        <FooterLinkList>
+                           <span>Free Shipping on purchase of products $200 or more</span>
+                        </FooterLinkList>
+                    </FooterSection>
+                </Footer>
                 <Header title={<span><span style={{ color: '#ddd' }}>SHOPDROP an </span><strong>Indian Dress Shop</strong></span>}>
                     <Navigation>
                       <Link to="/login">Login</Link>
@@ -38,7 +44,17 @@ class App extends Component {
                   </Switch>
                   </div>
                 </Content>
+                <Footer size="mini">
+                    <FooterSection type="left" logo="Shopdrop">
+                        <FooterLinkList>
+                            <a href="#">Help</a>
+                            <a href="#">Privacy & Terms</a>
+                        </FooterLinkList>
+                    </FooterSection>
+                </Footer>
             </Layout>
+            
+
         </div>
     );
   }
