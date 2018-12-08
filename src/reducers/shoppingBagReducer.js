@@ -7,12 +7,12 @@ export default function ShoppingBagReducer(state = {
   , action) {
     switch(action.type) {
       case 'ADD_BAG_SUCCESS':
-      console.log("add bag=", action, state);
-      return {...state, bagItems:[...state.bagItems, action.payload]}
-           
+      return {...state,bagItems:[...state.bagItems.concat(action.payload)]}
 
       case 'REMOVE_BAG_SUCCESS':
-      return {...state, bagItems:[...state.bagItems.slice(action.payload)]}
+      return Object.assign({}, state, {
+        bagItems: [...state.bagItems.filter(item => item.id !== action.payload.id)],
+      });
 
       default:
         return state;

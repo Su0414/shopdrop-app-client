@@ -12,19 +12,17 @@ class Item extends Component {
   }
 
 render(){
-
-        const {item} = this.props
-  
+        const {item} = this.props  
         return (
           <div key={item.id} > 
             <Card   shadow={5} style={{minWidth: '100%', margin: 'auto'}}>
               <CardTitle style={{color: '#fff', height: '176px', background: `url(${item.image_url}) center / cover`}} >
-                <Link to="/item">{item.name}</Link> 
+                <Link to="/#">{item.name}</Link> 
               </CardTitle>
               <CardText>              
-                Item Details: {item.description}  <br/>               
-                Price: {item.price} <br/>
-                # {item.id}              
+                Product Details: {item.description}  <br/>               
+                Price: $ {item.price} <br/>
+                Web ID: # {item.id}              
                 {/* <ItemCounterContainer itemId={item.id}/> */}
               </CardText>
               <CardActions border>

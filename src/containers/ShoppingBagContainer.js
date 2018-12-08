@@ -21,21 +21,17 @@ class ShoppingBagContainer extends Component {
     render() {   
 
      //console.log("in cont=",this.props.bagItems)
-     const {bagItems} = this.props.bagItems;
-     
+     const {bagItems} = this.props.bagItems;    
       
         return (
-          <div>              
+          <div>
+                            
               <Button colored onClick={(event) => this.addItemsToBag(event)}>Add To Cart</Button>
-              <Button colored onClick={(event) => this.deleteItemsFromBag(event)}>Remove From Cart</Button>
-
-              <span>
-              <Link to={{pathname: "/addtocart" 
-                      }}
-              >Show Cart</Link>
-              
-              
-              </span>   
+              <Link to={{pathname: "/addtocart" , 
+                         state: {bagItems: bagItems}
+                        }}
+                >Show Cart</Link>
+              <Button colored onClick={(event) => this.deleteItemsFromBag(event)}>Remove From Cart</Button>                
           </div>
     )
   }

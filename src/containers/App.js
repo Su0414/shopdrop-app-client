@@ -30,7 +30,10 @@ class App extends Component {
                     <Navigation>
                       <Link to="/login">Login</Link>
                       <Link to="/home">Products</Link>                     
-                      <Link to="/addtocart">Cart</Link>                                                       
+                      <Link to={{pathname: "/addtocart" , 
+                         state: {bagItems: []}
+                        }}
+                > Cart</Link>                                                      
                     </Navigation>                    
                 </Header>
                         
@@ -47,8 +50,8 @@ class App extends Component {
                 <Footer size="mini">
                     <FooterSection type="left" logo="Shopdrop">
                         <FooterLinkList>
-                            <a href="#">Help</a>
-                            <a href="#">Privacy & Terms</a>
+                            <a href="/">Help</a>
+                            <a href="/">Privacy & Terms</a>
                         </FooterLinkList>
                     </FooterSection>
                 </Footer>

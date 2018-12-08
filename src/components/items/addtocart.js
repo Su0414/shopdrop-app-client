@@ -1,75 +1,44 @@
-import React from 'react'
-import { ListItem, Grid, Cell, DataTable, TableHeader, Button} from 'react-mdl';
+import React, {Component} from 'react'
+import {List, ListItem, ListItemContent, Grid, Cell, DataTable, TableHeader, Button} from 'react-mdl';
 
-const AddToCart = (props) => {
-  //console.log("in cart=", props)
-  // const itemRow = props.bagItems;
+class AddToCart extends Component{
+  
+  render(){
+          const { bagItems } = this.props.location.state
+          const listItems = bagItems.map((item) =>{
+            return  (
+                      <List>
+                        <ListItem>
+                            <ListItemContent>
+                              <Button style={{color: '#fff', height: '100px', background: `url(${item.image_url}) center / cover`}} ></Button>
+                              <span>Product Name: {item.name}</span><br/>
+                              <span>Price: {item.price}</span>
+                              <span></span><span></span><span></span>
+                              <span><Button colored >Remove</Button></span>
+                            </ListItemContent > 
+                          </ListItem>      
+                        </List>
+            )}
+          );
 
-  // const listItems = itemRow.map((item) =>
-  //   <ListItem key={item.toString()}
-  //             value={item.name} />
-  // );
-
-  //debugger;
          return (
-          <div>
-            <ul>
-              {/* {listItems} */}
-            </ul>
-            <Grid className="demo-grid-1">
-                <Cell col={2}>
-                <h3>Shopping Bag</h3>
-                </Cell>
-                <Cell col={8}>
-                <DataTable style={{minWidth: '100%', margin: 'auto'}}
-                shadow={0}
-                rows={[
-                    {
-                      id: 1001, 
-                      item: 'Panash Pink Saree', 
-                      quantity: 2, 
-                      price: 222.90, 
-                      removeItem: 'Delete'
-                    },
-                    {id: 1002, item: 'Kurta', quantity: 5, price: 124.25, removeItem: 'Delete'},
-                    {id: 1003, item: 'Kids Kurta (Gold on Blue)', quantity: 1, price: 24.35, removeItem: 'Delete'}
-                ]}
-              >
-                <TableHeader name="url" tooltip="Image">Product Image</TableHeader>
+                <Grid className="demo-grid-1">
+                  <Cell col={2}>
+                    <h3>Shopping Bag</h3>
+                  </Cell>
 
-                <TableHeader name="item" tooltip="The amazing material name">Product</TableHeader>
-                <TableHeader numeric name="quantity" tooltip="Number of materials">Quantity</TableHeader>
-                <TableHeader numeric name="price" cellFormatter={(price) => `$${price.toFixed(2)}`} tooltip="Price pet unit">Price</TableHeader>
-                <TableHeader numeric name="removeItem" tooltip="Remove from bag">Remove</TableHeader>
-            </DataTable>
-<br/>
-            <DataTable style={{minWidth: '100%', margin: 'auto'}}
-                shadow={0}
-                rows={[
-                    {
-                      id: 1001, 
-                      item: 'Womens Kurta', 
-                      quantity: 25, 
-                      price: 2.90
-                    }
-                ]}
-              >
-              <TableHeader name="total" tooltip="Check your total">TOTAL</TableHeader>
- 
-            </DataTable>                
-                
-                </Cell>
-                <Cell col={2}>
-                <Button raised colored align="left">Proceed to Checkout</Button>
+                  <Cell col={8}>
+                    <h3>Your Products Here</h3>                  
+                      {listItems}
+                  </Cell>
 
-                </Cell>
-            </Grid>
-              
-
-
-              
-          </div>
-    )
+                  <Cell col={2}>
+                    <Button raised colored>Checkout</Button>
+                  </Cell>
+                </Grid>
+                         
+    );
   }
+}
 
 export default AddToCart;

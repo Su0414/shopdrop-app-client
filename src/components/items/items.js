@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Tabs, Tab, Grid, Cell} from 'react-mdl';
 
 import Item from './item'
-import ItemFormContainer from '../../containers/ItemFormContainer';
+// import ItemFormContainer from '../../containers/ItemFormContainer';
 
 class Items extends Component {
   constructor(props) {
