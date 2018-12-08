@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Tabs, Tab, Grid, Cell} from 'react-mdl';
 
 import Item from './item'
+import ItemFormContainer from '../../containers/ItemFormContainer';
 
 class Items extends Component {
   constructor(props) {
@@ -9,10 +10,12 @@ class Items extends Component {
     this.state = { activeTab: 0 };
   }
 
-  handleSort(event){
-    console.log("in handle sort" , this.props.items);
+     
+  sortItemsByPrice(event){
+    //console.log("in handle sort" , this.props.items);
+    this.props.sortItemsByPrice(this.props.items)
   }
-
+  
   render() {
     const {items, deleteItem} = this.props;
    
@@ -36,17 +39,14 @@ class Items extends Component {
             </Tabs>
 
               <div className="content">                      
-                            
-
-              <div style={{width: '100%', margin: 'auto'}}>
-              <Button onClick={(event) => this.handleSort(event)}>               
-                SortBy Price
+              <Button onClick={(event) => this.sortItemsByPrice(event)}>               
+                  SortBy Price
               </Button>
 
-                <div className="products-grid">
+              <div style={{width: '100%', margin: 'auto'}}>            
 
-                  {items_list}
-                  
+                <div className="products-grid">
+                  {items_list}                 
                 </div>
               </div>
           </div>

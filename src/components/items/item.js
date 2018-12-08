@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Badge, Card, CardTitle, CardText, CardActions, Button, CardMenu, Icon } from 'react-mdl';
 
 import ItemCounterContainer from '../../containers/ItemCounterContainer';
-
 import ShoppingBagContainer from '../../containers/ShoppingBagContainer';
 
 class Item extends Component {

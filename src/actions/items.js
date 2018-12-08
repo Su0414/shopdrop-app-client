@@ -60,4 +60,10 @@ export const getAllItems = () => {
     }
   }
 
- 
+  export const sortItemsByPrice = items => {
+    //console.log("in sort")
+    return {
+      type: 'SORT_BYPRICE_SUCCESS',
+      payload: items
+    }
+  }
