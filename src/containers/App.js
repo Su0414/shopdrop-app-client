@@ -19,6 +19,7 @@ class App extends Component {
     return (
       <div style={{height: '800px', position: 'relative'}}>
             <Layout fixedHeader>
+
                 <Footer size="micro">
                     <FooterSection type="center" logo="Shopdrop">
                         <FooterLinkList>
@@ -26,6 +27,7 @@ class App extends Component {
                         </FooterLinkList>
                     </FooterSection>
                 </Footer>
+
                 <Header title={<span><span style={{ color: '#ddd' }}>SHOPDROP an </span><strong>Indian Dress Shop</strong></span>}>
                     <Navigation>
                       <Link to="/login">Login</Link>
@@ -33,7 +35,7 @@ class App extends Component {
                       <Link to={{pathname: "/addtocart" , 
                          state: {bagItems: []}
                         }}
-                > Cart</Link>                                                      
+                      > Cart</Link>                                                      
                     </Navigation>                    
                 </Header>
                         
@@ -47,16 +49,17 @@ class App extends Component {
                   </Switch>
                   </div>
                 </Content>
+
                 <Footer size="mini">
                     <FooterSection type="left" logo="Shopdrop">
                         <FooterLinkList>
-                            <a href="/">Help</a>
-                            <a href="/">Privacy & Terms</a>
+                            <Link to="/">Help</Link>
+                            <Link to="/">Privacy & Terms</Link>                           
                         </FooterLinkList>
                     </FooterSection>
                 </Footer>
-            </Layout>
-            
+
+            </Layout>       
 
         </div>
     );

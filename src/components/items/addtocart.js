@@ -14,7 +14,7 @@ class AddToCart extends Component{
                               <span>Product Name: {item.name}</span><br/>
                               <span>Price: {item.price}</span>
                               <span></span><span></span><span></span>
-                              <span><Button colored >Remove</Button></span>
+                              {/* <span><Button colored >Remove</Button></span> */}
                             </ListItemContent > 
                           </ListItem>      
                         </List>

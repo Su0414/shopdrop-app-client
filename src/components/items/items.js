@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import { Button, Tabs, Tab, Grid, Cell} from 'react-mdl';
 
 import Item from './item'
-// import ItemFormContainer from '../../containers/ItemFormContainer';
 
 class Items extends Component {
   constructor(props) {
     super(props);
     this.state = { activeTab: 0 };
   }
-
      
   sortItemsByPrice(event){
-    //console.log("in handle sort" , this.props.items);
     this.props.sortItemsByPrice(this.props.items)
   }
   
@@ -27,35 +24,33 @@ class Items extends Component {
     });
      
     return(
-      <div>
-        <Grid >
-        <Cell col={1}></Cell>
-            <Cell col={10}>
-            <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
-              <Tab>All</Tab>
-              <Tab>For Her</Tab>
-              <Tab>For Him</Tab>
-              <Tab>Kids</Tab>
-            </Tabs>
+          <div>
+            <Grid >
+                <Cell col={1}></Cell>
+                <Cell col={10}>
+                    <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
+                      <Tab>All</Tab>
+                      <Tab>For Her</Tab>
+                      <Tab>For Him</Tab>
+                      <Tab>Kids</Tab>
+                    </Tabs>
 
-              <div className="content">                      
-              <Button onClick={(event) => this.sortItemsByPrice(event)}>               
-                  SortBy Price
-              </Button>
+                    <div className="content">                      
+                        <Button onClick={(event) => this.sortItemsByPrice(event)}>               
+                            SortBy Price
+                        </Button>
 
-              <div style={{width: '100%', margin: 'auto'}}>            
-
-                <div className="products-grid">
-                  {items_list}                 
-                </div>
-              </div>
+                        <div style={{width: '100%', margin: 'auto'}}>    
+                          <div className="products-grid">
+                            {items_list}                 
+                          </div>
+                        </div>
+                    </div>
+                </Cell>
+                <Cell col={1}></Cell>
+            </Grid>               
           </div>
-            </Cell>
-            <Cell col={1}></Cell>
-        </Grid>      
-          
-      </div>
-    )
+        )
   }
 }
 export default Items;
