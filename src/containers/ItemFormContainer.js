@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import { connect } from 'react-redux';
 import { createItem } from '../actions/items';
+
 import { Grid, Cell} from 'react-mdl';
 
 class ItemFormContainer extends Component {
@@ -8,7 +9,7 @@ class ItemFormContainer extends Component {
    
     super(props);
     this.state = {
-      name: '', description: '', image_url: '', price:0.0
+      name: '', description: '', image_url: '', price:0.0, likes_count: 0
     };
   };
 
@@ -23,7 +24,7 @@ class ItemFormContainer extends Component {
     this.props.createItem(this.state)
     console.log('B')
     this.setState({
-      name: '', description: '', image_url: '', price:0.0
+      name: '', description: '', image_url: '', price:0.0, likes_count: 0
     });
   }
 

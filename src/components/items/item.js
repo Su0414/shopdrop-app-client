@@ -5,12 +5,15 @@ import { Badge, Card, CardTitle, CardText, CardActions, Button, CardMenu, Icon }
 import ItemCounterContainer from '../../containers/ItemCounterContainer';
 import ShoppingBagContainer from '../../containers/ShoppingBagContainer';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
+
 class Item extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      likeCounter: 0
+      likes_count: 0
     }
   }
   
@@ -18,11 +21,32 @@ class Item extends Component {
     this.props.deleteItem(this.props.item.id);
   }
 
-  handleLike(event){    
-     
-    this.setState({
-      likeCounter : this.state.likeCounter + 1
+  
+  handleOnLike(event){
+
+    this.state=({
+      likes_count: this.state.likes_count + 1
     })
+    const likesData = {
+      name: this.props.item.name,
+      description: this.props.item.description,
+      price: this.props.item.price,
+      likes_count: this.state.likes_count + 1
+    }    
+
+    console.log("data", likesData)
+
+    fetch(`${API_URL}/items/${this.props.item.id}`, {
+          method: "PATCH",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ item: likesData })
+        })
+          .then(response => response.json())
+          .catch(error => console.log(error))
+        
+
   }
 
 render(){
@@ -38,9 +62,12 @@ render(){
                 Price: $ {item.price} <br/>
                 Web ID: # {item.id}         
 
-                <Button colored onClick={(event) => this.handleLike(event)}>Like</Button> 
-                {this.state.likeCounter}
+                <Button colored onClick={(event) => this.handleOnLike(event)}>Like</Button> 
+                
+                Likes : {item.likes_count}
+
                 {/* <ItemCounterContainer itemId={item.id}/> */}
+
               </CardText>
               <CardActions border>
 
