@@ -6,9 +6,23 @@ import ItemCounterContainer from '../../containers/ItemCounterContainer';
 import ShoppingBagContainer from '../../containers/ShoppingBagContainer';
 
 class Item extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      likeCounter: 0
+    }
+  }
   
   handleOnClick(event){    
     this.props.deleteItem(this.props.item.id);
+  }
+
+  handleLike(event){    
+     
+    this.setState({
+      likeCounter : this.state.likeCounter + 1
+    })
   }
 
 render(){
@@ -22,7 +36,10 @@ render(){
               <CardText>              
                 Product Details: {item.description}  <br/>               
                 Price: $ {item.price} <br/>
-                Web ID: # {item.id}              
+                Web ID: # {item.id}         
+
+                <Button colored onClick={(event) => this.handleLike(event)}>Like</Button> 
+                {this.state.likeCounter}
                 {/* <ItemCounterContainer itemId={item.id}/> */}
               </CardText>
               <CardActions border>

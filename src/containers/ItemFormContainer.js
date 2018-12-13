@@ -18,8 +18,10 @@ class ItemFormContainer extends Component {
   }
 
   handleOnSubmit(event) {
-    event.preventDefault();    
+    event.preventDefault();
+    console.log('A')    
     this.props.createItem(this.state)
+    console.log('B')
     this.setState({
       name: '', description: '', image_url: '', price:0.0
     });
