@@ -27,11 +27,12 @@ class Item extends Component {
     this.state=({
       likes_count: this.state.likes_count + 1
     })
+
     const likesData = {
       name: this.props.item.name,
       description: this.props.item.description,
       price: this.props.item.price,
-      likes_count: this.state.likes_count + 1
+      likes_count: this.state.likes_count
     }    
 
     console.log("data", likesData)
