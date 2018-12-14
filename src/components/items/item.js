@@ -45,8 +45,15 @@ class Item extends Component {
           body: JSON.stringify({ item: likesData })
         })
           .then(response => response.json())
-          .catch(error => console.log(error))
-        
+          .catch(error => {
+  
+            this.state=({
+              likes_count: this.state.likes_count - 1
+            })
+            console.log("in error code", this.state.likes_count);
+            return false;
+          }
+          )
 
   }
 
