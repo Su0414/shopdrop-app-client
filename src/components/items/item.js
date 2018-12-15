@@ -11,9 +11,9 @@ const API_URL = process.env.REACT_APP_API_URL;
 class Item extends Component {
   constructor(props){
     super(props);
-
+  
     this.state = {
-      likes_count: 0
+      likes_count: props.item.likes_count
     }
   }
   
@@ -45,9 +45,18 @@ class Item extends Component {
           body: JSON.stringify({ item: likesData })
         })
           .then(response => response.json())
+          .then(data => {
+            console.log("data = ", data);
+            this.setState({
+              likes_count: data.likes_count
+            })
+          }
+          
+            
+          )
           .catch(error => {
   
-            this.state=({
+            this.setState({
               likes_count: this.state.likes_count - 1
             })
             console.log("in error code", this.state.likes_count);
@@ -72,7 +81,7 @@ render(){
 
                 <Button colored onClick={(event) => this.handleOnLike(event)}>Like</Button> 
                 
-                Likes : {item.likes_count}
+                Likes : {this.state.likes_count}
 
                 {/* <ItemCounterContainer itemId={item.id}/> */}
 
